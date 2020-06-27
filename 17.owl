@@ -1,0 +1,316 @@
+Prefix(:=<http://www.semanticweb.org/gaurav/ontologies/2020/5/untitled-ontology-3#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/gaurav/ontologies/2020/5/untitled-ontology-3>
+
+Declaration(Class(:CakeButterDough))
+Declaration(Class(:ChocolateChipTopping))
+Declaration(Class(:ChocolateDoughnut))
+Declaration(Class(:ChocolateDrizzleTopping))
+Declaration(Class(:ChocolateFrosting))
+Declaration(Class(:ChocolateTopping))
+Declaration(Class(:ChocolatelayerTopping))
+Declaration(Class(:CoffeeFrosting))
+Declaration(Class(:CookieCrumbleTopping))
+Declaration(Class(:CreamFrosting))
+Declaration(Class(:Delight))
+Declaration(Class(:Divine))
+Declaration(Class(:Doughnut))
+Declaration(Class(:DoughnutBase))
+Declaration(Class(:DoughnutFrosting))
+Declaration(Class(:DoughnutTopping))
+Declaration(Class(:FruitDoughnut))
+Declaration(Class(:FruitTopping))
+Declaration(Class(:HazelnutTopping))
+Declaration(Class(:HoneyDrizzleTopping))
+Declaration(Class(:InterestingDoughnut))
+Declaration(Class(:LowSugarDoughnut))
+Declaration(Class(:MarshmellowTopping))
+Declaration(Class(:NutsTopping))
+Declaration(Class(:PeanutTopping))
+Declaration(Class(:PrimierDoughnut))
+Declaration(Class(:RaisinTopping))
+Declaration(Class(:StrawberryFrosting))
+Declaration(Class(:StrawberryTopping))
+Declaration(Class(:SugarDoughnut))
+Declaration(Class(:SugarSprinkleTopping))
+Declaration(Class(:SugarTopping))
+Declaration(Class(:SugarfreeDoughnut))
+Declaration(Class(:Sweet))
+Declaration(Class(:SweetnessValuePartition))
+Declaration(Class(:TastyDoughnut))
+Declaration(Class(:ToastedCoconutTopping))
+Declaration(Class(:ValuePartition))
+Declaration(Class(:VanillaFrosting))
+Declaration(Class(:WalnutTopping))
+Declaration(Class(:YeastRaisedDough))
+Declaration(Class(<http://www.semanticweb.org/gaurav/ontologies/2020/5/untitled-ontology-3#CherryTopping'>))
+Declaration(ObjectProperty(:hasBase))
+Declaration(ObjectProperty(:hasFrosting))
+Declaration(ObjectProperty(:hasIngredient))
+Declaration(ObjectProperty(:hasSweetness))
+Declaration(ObjectProperty(:hasTopping))
+Declaration(ObjectProperty(:isBaseOf))
+Declaration(ObjectProperty(:isFrostingOf))
+Declaration(ObjectProperty(:isFrostingof))
+Declaration(ObjectProperty(:isIngredientOf))
+Declaration(ObjectProperty(:isToppingOf))
+Declaration(DataProperty(:hasSugarContentValue))
+Declaration(NamedIndividual(:ChocolateDoughnut))
+Declaration(NamedIndividual(:CookieCrumbleTopping))
+Declaration(NamedIndividual(:Doughnut))
+Declaration(NamedIndividual(:FruitDoughnut))
+Declaration(NamedIndividual(:InterestingDoughnut))
+Declaration(NamedIndividual(:LowSugarDoughnut))
+Declaration(NamedIndividual(:StrawberryFrosting))
+############################
+#   Object Properties
+############################
+
+# Object Property: :hasBase (:hasBase)
+
+SubObjectPropertyOf(:hasBase :hasIngredient)
+
+# Object Property: :hasFrosting (:hasFrosting)
+
+SubObjectPropertyOf(:hasFrosting :hasIngredient)
+
+# Object Property: :hasIngredient (:hasIngredient)
+
+SubObjectPropertyOf(:hasIngredient owl:topObjectProperty)
+
+# Object Property: :hasTopping (:hasTopping)
+
+SubObjectPropertyOf(:hasTopping :hasIngredient)
+
+# Object Property: :isBaseOf (:isBaseOf)
+
+SubObjectPropertyOf(:isBaseOf :isIngredientOf)
+
+# Object Property: :isFrostingOf (:isFrostingOf)
+
+SubObjectPropertyOf(:isFrostingOf :isBaseOf)
+
+# Object Property: :isFrostingof (:isFrostingof)
+
+SubObjectPropertyOf(:isFrostingof :isIngredientOf)
+
+# Object Property: :isToppingOf (:isToppingOf)
+
+SubObjectPropertyOf(:isToppingOf :isIngredientOf)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :hasSugarContentValue (:hasSugarContentValue)
+
+SubDataPropertyOf(:hasSugarContentValue owl:topDataProperty)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :CakeButterDough (:CakeButterDough)
+
+SubClassOf(:CakeButterDough :DoughnutBase)
+
+# Class: :ChocolateChipTopping (:ChocolateChipTopping)
+
+SubClassOf(:ChocolateChipTopping :ChocolateTopping)
+
+# Class: :ChocolateDoughnut (:ChocolateDoughnut)
+
+SubClassOf(:ChocolateDoughnut :Doughnut)
+
+# Class: :ChocolateDrizzleTopping (:ChocolateDrizzleTopping)
+
+SubClassOf(:ChocolateDrizzleTopping :ChocolateTopping)
+
+# Class: :ChocolateFrosting (:ChocolateFrosting)
+
+SubClassOf(:ChocolateFrosting :DoughnutFrosting)
+
+# Class: :ChocolateTopping (:ChocolateTopping)
+
+SubClassOf(:ChocolateTopping :DoughnutTopping)
+
+# Class: :ChocolatelayerTopping (:ChocolatelayerTopping)
+
+SubClassOf(:ChocolatelayerTopping :ChocolateTopping)
+SubClassOf(:ChocolatelayerTopping ObjectAllValuesFrom(:hasBase :YeastRaisedDough))
+SubClassOf(:ChocolatelayerTopping ObjectExactCardinality(1 :hasFrosting :ChocolateFrosting))
+SubClassOf(:ChocolatelayerTopping ObjectExactCardinality(1 :hasTopping :ChocolateTopping))
+
+# Class: :CoffeeFrosting (:CoffeeFrosting)
+
+SubClassOf(:CoffeeFrosting :DoughnutFrosting)
+
+# Class: :CookieCrumbleTopping (:CookieCrumbleTopping)
+
+SubClassOf(:CookieCrumbleTopping ObjectExactCardinality(1 :hasBase :CakeButterDough))
+SubClassOf(:CookieCrumbleTopping ObjectExactCardinality(1 :hasFrosting :ChocolateFrosting))
+SubClassOf(:CookieCrumbleTopping ObjectExactCardinality(1 :hasTopping :SugarTopping))
+
+# Class: :CreamFrosting (:CreamFrosting)
+
+SubClassOf(:CreamFrosting :DoughnutFrosting)
+
+# Class: :Delight (:Delight)
+
+SubClassOf(:Delight :SweetnessValuePartition)
+
+# Class: :Divine (:Divine)
+
+SubClassOf(:Divine :SweetnessValuePartition)
+
+# Class: :FruitDoughnut (:FruitDoughnut)
+
+SubClassOf(:FruitDoughnut :Doughnut)
+
+# Class: :FruitTopping (:FruitTopping)
+
+SubClassOf(:FruitTopping :DoughnutTopping)
+
+# Class: :HazelnutTopping (:HazelnutTopping)
+
+SubClassOf(:HazelnutTopping :NutsTopping)
+
+# Class: :HoneyDrizzleTopping (:HoneyDrizzleTopping)
+
+SubClassOf(:HoneyDrizzleTopping :SugarTopping)
+
+# Class: :InterestingDoughnut (:InterestingDoughnut)
+
+SubClassOf(:InterestingDoughnut :Doughnut)
+
+# Class: :LowSugarDoughnut (:LowSugarDoughnut)
+
+SubClassOf(:LowSugarDoughnut :Doughnut)
+
+# Class: :MarshmellowTopping (:MarshmellowTopping)
+
+SubClassOf(:MarshmellowTopping :SugarTopping)
+
+# Class: :NutsTopping (:NutsTopping)
+
+SubClassOf(:NutsTopping :DoughnutTopping)
+
+# Class: :PeanutTopping (:PeanutTopping)
+
+SubClassOf(:PeanutTopping :NutsTopping)
+
+# Class: :PrimierDoughnut (:PrimierDoughnut)
+
+SubClassOf(:PrimierDoughnut :Doughnut)
+
+# Class: :RaisinTopping (:RaisinTopping)
+
+SubClassOf(:RaisinTopping :FruitTopping)
+
+# Class: :StrawberryFrosting (:StrawberryFrosting)
+
+SubClassOf(:StrawberryFrosting :DoughnutFrosting)
+
+# Class: :StrawberryTopping (:StrawberryTopping)
+
+SubClassOf(:StrawberryTopping :FruitTopping)
+
+# Class: :SugarDoughnut (:SugarDoughnut)
+
+SubClassOf(:SugarDoughnut :PrimierDoughnut)
+
+# Class: :SugarSprinkleTopping (:SugarSprinkleTopping)
+
+SubClassOf(:SugarSprinkleTopping :SugarTopping)
+
+# Class: :SugarTopping (:SugarTopping)
+
+SubClassOf(:SugarTopping :DoughnutTopping)
+
+# Class: :SugarfreeDoughnut (:SugarfreeDoughnut)
+
+SubClassOf(:SugarfreeDoughnut :Doughnut)
+
+# Class: :Sweet (:Sweet)
+
+SubClassOf(:Sweet :SweetnessValuePartition)
+
+# Class: :SweetnessValuePartition (:SweetnessValuePartition)
+
+SubClassOf(:SweetnessValuePartition :ValuePartition)
+
+# Class: :TastyDoughnut (:TastyDoughnut)
+
+SubClassOf(:TastyDoughnut :Doughnut)
+SubClassOf(:TastyDoughnut ObjectAllValuesFrom(:hasBase :CakeButterDough))
+SubClassOf(:TastyDoughnut ObjectAllValuesFrom(:hasTopping :FruitTopping))
+SubClassOf(:TastyDoughnut ObjectExactCardinality(1 :hasFrosting :CreamFrosting))
+
+# Class: :ToastedCoconutTopping (:ToastedCoconutTopping)
+
+SubClassOf(:ToastedCoconutTopping :SugarTopping)
+
+# Class: :VanillaFrosting (:VanillaFrosting)
+
+SubClassOf(:VanillaFrosting :DoughnutFrosting)
+
+# Class: :WalnutTopping (:WalnutTopping)
+
+SubClassOf(:WalnutTopping :NutsTopping)
+
+# Class: :YeastRaisedDough (:YeastRaisedDough)
+
+SubClassOf(:YeastRaisedDough :DoughnutBase)
+
+# Class: <http://www.semanticweb.org/gaurav/ontologies/2020/5/untitled-ontology-3#CherryTopping'> (<http://www.semanticweb.org/gaurav/ontologies/2020/5/untitled-ontology-3#CherryTopping'>)
+
+SubClassOf(<http://www.semanticweb.org/gaurav/ontologies/2020/5/untitled-ontology-3#CherryTopping'> :FruitTopping)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :ChocolateDoughnut (:ChocolateDoughnut)
+
+ClassAssertion(:ChocolateDoughnut :ChocolateDoughnut)
+
+# Individual: :CookieCrumbleTopping (:CookieCrumbleTopping)
+
+ClassAssertion(:CookieCrumbleTopping :CookieCrumbleTopping)
+DataPropertyAssertion(:hasSugarContentValue :CookieCrumbleTopping "650"^^xsd:integer)
+
+# Individual: :Doughnut (:Doughnut)
+
+ClassAssertion(:Doughnut :Doughnut)
+
+# Individual: :FruitDoughnut (:FruitDoughnut)
+
+ClassAssertion(:FruitDoughnut :FruitDoughnut)
+
+# Individual: :InterestingDoughnut (:InterestingDoughnut)
+
+ClassAssertion(:InterestingDoughnut :InterestingDoughnut)
+DataPropertyAssertion(:hasSugarContentValue :InterestingDoughnut "21"^^xsd:integer)
+
+# Individual: :LowSugarDoughnut (:LowSugarDoughnut)
+
+ClassAssertion(:LowSugarDoughnut :LowSugarDoughnut)
+DataPropertyAssertion(:hasSugarContentValue :LowSugarDoughnut "200"^^xsd:integer)
+
+# Individual: :StrawberryFrosting (:StrawberryFrosting)
+
+ClassAssertion(:StrawberryFrosting :StrawberryFrosting)
+DataPropertyAssertion(:hasSugarContentValue :StrawberryFrosting "460"^^xsd:integer)
+
+
+)
